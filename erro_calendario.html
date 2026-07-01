@@ -1,0 +1,579 @@
+<!DOCTYPE html><html lang="pt" class="notranslate" translate="no"><head><meta charset="utf-8"><meta http-equiv="cache-control" content="no-cache"><meta http-equiv="expires" content="0"><meta http-equiv="pragma" content="no-cache"><link rel="icon" href="./favicon.png"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'self' blob: https://uploadtemplatesprod.blob.core.windows.net; script-src 'self' https://cdn.cookielaw.org https://static.zenvia.com https://static.cloudflareinsights.com https://privacyportal-br-cdn.onetrust.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://static.zenvia.com https://privacyportal-br-cdn.onetrust.com/privacy-notice-scripts/css/v2/otnotice-core.css; font-src 'self' https://fonts.gstatic.com data: https://privacyportal-br-cdn.onetrust.com; img-src 'self' data: blob: https://cdn.cookielaw.org https://uploadtemplatesprod.blob.core.windows.net; media-src 'self' https://uploadtemplatesprod.blob.core.windows.net; connect-src 'self' https://api-dev.grupomarista.org.br https://api-qa.grupomarista.org.br https://api-uat.grupomarista.org.br https://api.grupomarista.org.br https://uploadtemplatesdev.blob.core.windows.net https://uploadtemplatesqa.blob.core.windows.net https://uploadtemplatesuat.blob.core.windows.net https://uploadtemplates.blob.core.windows.net https://uploadtemplatesprod.blob.core.windows.net https://cdn.cookielaw.org https://mps-marista-privacy.my.onetrust.com https://geolocation.onetrust.com https://static.zenvia.com https://chat.zenvia.com https://login.microsoftonline.com https://privacyportal-br-cdn.onetrust.com https://privacyportal-br.onetrust.com; frame-src 'self' https://login.microsoftonline.com blob: https://mps-marista-privacy.my.onetrust.com https://privacyportal-br.onetrust.com; worker-src 'self' blob:; form-action 'self'; frame-ancestors 'self';"><meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"><meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), vr=(), accelerometer=(), autoplay=(), clipboard-write=(), encrypted-media=(), fullscreen=(), gyroscope=(), magnetometer=(), midi=(), picture-in-picture=(), sync-xhr=(), xr-spatial-tracking=()"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="Web site created using create-react-app"><meta name="google" content="notranslate"><link rel="apple-touch-icon" href="./logo192.png"><link rel="manifest" href="./manifest.json"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&amp;display=swap" rel="stylesheet"><title>Agenda Docente</title><script defer="defer" src="./static/js/main.7e0f2a16.js"></script><link href="./static/css/main.9809ca42.css" rel="stylesheet"><style type="text/css">.rmsc{--rmsc-main: #4285f4;--rmsc-hover: #f1f3f5;--rmsc-selected: #e2e6ea;--rmsc-border: #ccc;--rmsc-gray: #aaa;--rmsc-bg: #fff;--rmsc-p: 10px;--rmsc-radius: 4px;--rmsc-h: 38px}.rmsc *{box-sizing:border-box;transition:all .2s ease}.rmsc .gray{color:var(--rmsc-gray)}.rmsc .dropdown-content{position:absolute;z-index:1;top:100%;width:100%;padding-top:8px}.rmsc .dropdown-content .panel-content{overflow:hidden;border-radius:var(--rmsc-radius);background:var(--rmsc-bg);box-shadow:0 0 0 1px #0000001a,0 4px 11px #0000001a}.rmsc .dropdown-container{position:relative;outline:0;background-color:var(--rmsc-bg);border:1px solid var(--rmsc-border);border-radius:var(--rmsc-radius)}.rmsc .dropdown-container[aria-disabled=true]:focus-within{box-shadow:var(--rmsc-gray) 0 0 0 1px;border-color:var(--rmsc-gray)}.rmsc .dropdown-container:focus-within{box-shadow:var(--rmsc-main) 0 0 0 1px;border-color:var(--rmsc-main)}.rmsc .dropdown-heading{position:relative;padding:0 var(--rmsc-p);display:flex;align-items:center;width:100%;height:var(--rmsc-h);cursor:default;outline:0}.rmsc .dropdown-heading .dropdown-heading-value{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}.rmsc .clear-selected-button{cursor:pointer;background:none;border:0;padding:0;display:flex}.rmsc .options{max-height:260px;overflow-y:auto;margin:0;padding-left:0}.rmsc .options li{list-style:none;margin:0}.rmsc .select-item{box-sizing:border-box;cursor:pointer;display:block;padding:var(--rmsc-p);outline-offset:-1px;outline-color:var(--rmsc-primary)}.rmsc .select-item:hover{background:var(--rmsc-hover)}.rmsc .select-item.selected{background:var(--rmsc-selected)}.rmsc .no-options{padding:var(--rmsc-p);text-align:center;color:var(--rmsc-gray)}.rmsc .search{width:100%;position:relative;border-bottom:1px solid var(--rmsc-border)}.rmsc .search input{background:none;height:var(--rmsc-h);padding:0 var(--rmsc-p);width:100%;outline:0;border:0;font-size:1em}.rmsc .search input:focus{background:var(--rmsc-hover)}.rmsc .search-clear-button{cursor:pointer;position:absolute;top:0;right:0;bottom:0;background:none;border:0;padding:0 calc(var(--rmsc-p) / 2)}.rmsc .search-clear-button [hidden]{display:none}.rmsc .item-renderer{display:flex;align-items:baseline}.rmsc .item-renderer input{margin:0 5px 0 0}.rmsc .item-renderer.disabled{opacity:.5}.rmsc .spinner{animation:rotate 2s linear infinite}.rmsc .spinner .path{stroke:var(--rmsc-border);stroke-width:4px;stroke-linecap:round;animation:dash 1.5s ease-in-out infinite}@keyframes rotate{to{transform:rotate(360deg)}}@keyframes dash{0%{stroke-dasharray:1,150;stroke-dashoffset:0}50%{stroke-dasharray:90,150;stroke-dashoffset:-35}to{stroke-dasharray:90,150;stroke-dashoffset:-124}}
+</style><style data-styled="active" data-styled-version="5.3.11"></style><style type="text/css" data-primereact-style-id="base">
+.p-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.p-overflow-hidden {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width);
+}
+</style><style type="text/css" data-primereact-style-id="global"></style><style type="text/css" data-primereact-style-id="common">
+@layer primereact {
+    .p-component, .p-component * {
+        box-sizing: border-box;
+    }
+
+    .p-hidden {
+        display: none;
+    }
+
+    .p-hidden-space {
+        visibility: hidden;
+    }
+
+    .p-reset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        text-decoration: none;
+        font-size: 100%;
+        list-style: none;
+    }
+
+    .p-disabled, .p-disabled * {
+        cursor: default;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .p-component-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .p-unselectable-text {
+        user-select: none;
+    }
+
+    .p-scrollbar-measure {
+        width: 100px;
+        height: 100px;
+        overflow: scroll;
+        position: absolute;
+        top: -9999px;
+    }
+
+    @-webkit-keyframes p-fadein {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes p-fadein {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .p-link {
+        text-align: left;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .p-link:disabled {
+        cursor: default;
+    }
+
+    /* Non react overlay animations */
+    .p-connected-overlay {
+        opacity: 0;
+        transform: scaleY(0.8);
+        transition: transform .12s cubic-bezier(0, 0, 0.2, 1), opacity .12s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    .p-connected-overlay-visible {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    .p-connected-overlay-hidden {
+        opacity: 0;
+        transform: scaleY(1);
+        transition: opacity .1s linear;
+    }
+
+    /* React based overlay animations */
+    .p-connected-overlay-enter {
+        opacity: 0;
+        transform: scaleY(0.8);
+    }
+
+    .p-connected-overlay-enter-active {
+        opacity: 1;
+        transform: scaleY(1);
+        transition: transform .12s cubic-bezier(0, 0, 0.2, 1), opacity .12s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    .p-connected-overlay-enter-done {
+        transform: none;
+    }
+
+    .p-connected-overlay-exit {
+        opacity: 1;
+    }
+
+    .p-connected-overlay-exit-active {
+        opacity: 0;
+        transition: opacity .1s linear;
+    }
+
+    /* Toggleable Content */
+    .p-toggleable-content-enter {
+        max-height: 0;
+    }
+
+    .p-toggleable-content-enter-active {
+        overflow: hidden;
+        max-height: 1000px;
+        transition: max-height 1s ease-in-out;
+    }
+
+    .p-toggleable-content-enter-done {
+        transform: none;
+    }
+
+    .p-toggleable-content-exit {
+        max-height: 1000px;
+    }
+
+    .p-toggleable-content-exit-active {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+    }
+
+    /* @todo Refactor */
+    .p-menu .p-menuitem-link {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        overflow: hidden;
+        position: relative;
+    }
+
+    
+.p-button {
+    margin: 0;
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.p-button-label {
+    flex: 1 1 auto;
+}
+
+.p-button-icon {
+    pointer-events: none;
+}
+
+.p-button-icon-right {
+    order: 1;
+}
+
+.p-button:disabled {
+    cursor: default;
+}
+
+.p-button-icon-only {
+    justify-content: center;
+}
+
+.p-button-icon-only .p-button-label {
+    visibility: hidden;
+    width: 0;
+    flex: 0 0 auto;
+}
+
+.p-button-vertical {
+    flex-direction: column;
+}
+
+.p-button-icon-bottom {
+    order: 2;
+}
+
+.p-button-group .p-button {
+    margin: 0;
+}
+
+.p-button-group .p-button:not(:last-child) {
+    border-right: 0 none;
+}
+
+.p-button-group .p-button:not(:first-of-type):not(:last-of-type) {
+    border-radius: 0;
+}
+
+.p-button-group .p-button:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.p-button-group .p-button:last-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.p-button-group .p-button:focus {
+    position: relative;
+    z-index: 1;
+}
+
+.p-button-group-single .p-button:first-of-type {
+    border-top-right-radius: var(--border-radius) !important;
+    border-bottom-right-radius: var(--border-radius) !important;
+}
+
+.p-button-group-single .p-button:last-of-type {
+    border-top-left-radius: var(--border-radius) !important;
+    border-bottom-left-radius: var(--border-radius) !important;
+}
+
+    
+.p-inputtext {
+    margin: 0;
+}
+
+.p-fluid .p-inputtext {
+    width: 100%;
+}
+
+/* InputGroup */
+.p-inputgroup {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.p-inputgroup-addon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-inputgroup .p-float-label {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.p-inputgroup .p-inputtext,
+.p-fluid .p-inputgroup .p-inputtext,
+.p-inputgroup .p-inputwrapper,
+.p-fluid .p-inputgroup .p-input {
+    flex: 1 1 auto;
+    width: 1%;
+}
+
+/* Floating Label */
+.p-float-label {
+    display: block;
+    position: relative;
+}
+
+.p-float-label label {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    margin-top: -0.5rem;
+    transition-property: all;
+    transition-timing-function: ease;
+    line-height: 1;
+}
+
+.p-float-label textarea ~ label,
+.p-float-label .p-mention ~ label {
+    top: 1rem;
+}
+
+.p-float-label input:focus ~ label,
+.p-float-label input:-webkit-autofill ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label,
+.p-float-label .p-tooltip-target-wrapper ~ label {
+    top: -0.75rem;
+    font-size: 12px;
+}
+
+.p-float-label .p-placeholder,
+.p-float-label input::placeholder,
+.p-float-label .p-inputtext::placeholder {
+    opacity: 0;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+
+.p-float-label .p-focus .p-placeholder,
+.p-float-label input:focus::placeholder,
+.p-float-label .p-inputtext:focus::placeholder {
+    opacity: 1;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+
+.p-input-icon-left,
+.p-input-icon-right {
+    position: relative;
+    display: inline-block;
+}
+
+.p-input-icon-left > i,
+.p-input-icon-right > i,
+.p-input-icon-left > svg,
+.p-input-icon-right > svg,
+.p-input-icon-left > .p-input-prefix,
+.p-input-icon-right > .p-input-suffix {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5rem;
+}
+
+.p-fluid .p-input-icon-left,
+.p-fluid .p-input-icon-right {
+    display: block;
+    width: 100%;
+}
+
+    
+.p-icon {
+    display: inline-block;
+}
+
+.p-icon-spin {
+    -webkit-animation: p-icon-spin 2s infinite linear;
+    animation: p-icon-spin 2s infinite linear;
+}
+
+svg.p-icon {
+    pointer-events: auto;
+}
+
+svg.p-icon g,
+.p-disabled svg.p-icon {
+    pointer-events: none;
+}
+
+@-webkit-keyframes p-icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes p-icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+}
+</style><style type="text/css" data-primereact-style-id="calendar">
+@layer primereact {
+    .p-calendar {
+        position: relative;
+        display: inline-flex;
+        max-width: 100%;
+    }
+
+    .p-calendar .p-inputtext {
+        flex: 1 1 auto;
+        width: 1%;
+    }
+
+    .p-calendar-w-btn-right .p-inputtext {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .p-calendar-w-btn-right .p-datepicker-trigger {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .p-calendar-w-btn-left .p-inputtext {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .p-calendar-w-btn-left .p-datepicker-trigger {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    /* Fluid */
+    .p-fluid .p-calendar {
+        display: flex;
+    }
+
+    .p-fluid .p-calendar .p-inputtext {
+        width: 1%;
+    }
+
+    /* Datepicker */
+    .p-calendar .p-datepicker {
+        min-width: 100%;
+    }
+
+    .p-datepicker {
+        width: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .p-datepicker-inline {
+        display: inline-block;
+        position: static;
+        overflow-x: auto;
+    }
+
+    /* Header */
+    .p-datepicker-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .p-datepicker-header .p-datepicker-title {
+        margin: 0 auto;
+    }
+
+    .p-datepicker-prev,
+    .p-datepicker-next {
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Multiple Month DatePicker */
+    .p-datepicker-multiple-month .p-datepicker-group-container {
+        display: flex;
+    }
+
+    .p-datepicker-multiple-month .p-datepicker-group-container .p-datepicker-group {
+        flex: 1 1 auto;
+    }
+
+    /* Multiple Month DatePicker */
+    .p-datepicker-multiple-month .p-datepicker-group-container {
+        display: flex;
+    }
+
+    /* DatePicker Table */
+    .p-datepicker table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .p-datepicker td > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Month Picker */
+    .p-monthpicker-month {
+        width: 33.3%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /*  Button Bar */
+    .p-datepicker-buttonbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Time Picker */
+    .p-timepicker {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .p-timepicker button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .p-timepicker > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Touch UI */
+    .p-datepicker-touch-ui,
+    .p-calendar .p-datepicker-touch-ui {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 80vw;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Year Picker */
+    .p-yearpicker-year {
+        width: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+    }
+}
+</style></head><body class="dx-viewport"><noscript>Você precisa do Javascript habilitado para executar essa aplicação.</noscript><div id="root"><div><section data-testid="app" class="sc-iUwfNp hnPPix"><nav data-testid="navbar" class="sc-fUkmAC iKVHlQ navbar navbar-expand navbar-light" style="position: fixed; z-index: 1050; width: 100vw;"><div class="container-fluid" style="padding: 0px; margin: 0px;"><span class="navbar-brand"><div class="sc-edKZPI jIHVhe"><div class="sc-bhqpjJ gBUbKj"><button type="button" title="Fechar menu" aria-label="Fechar menu" class="sc-hGMjit kvZnxJ btn btn-primary"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.04395 12.1739C9.04395 11.5258 9.56976 11 10.2179 11H29.7831C30.4336 11 30.957 11.5258 30.957 12.1739C30.957 12.8245 30.4336 13.3478 29.7831 13.3478H10.2179C9.56976 13.3478 9.04395 12.8245 9.04395 12.1739ZM9.04395 20C9.04395 19.3495 9.56976 18.8261 10.2179 18.8261H29.7831C30.4336 18.8261 30.957 19.3495 30.957 20C30.957 20.6505 30.4336 21.1739 29.7831 21.1739H10.2179C9.56976 21.1739 9.04395 20.6505 9.04395 20ZM29.7831 29H10.2179C9.56976 29 9.04395 28.4766 9.04395 27.8261C9.04395 27.1755 9.56976 26.6522 10.2179 26.6522H29.7831C30.4336 26.6522 30.957 27.1755 30.957 27.8261C30.957 28.4766 30.4336 29 29.7831 29Z" fill="white"></path></svg></button></div></div></span><div class="sc-iLLODe icLXLw"><div class="sc-fPrdXf bONHZI"><h1 class="sc-ezreuY emaMHK">Agenda Docente<button type="button" class="sc-fFlnrN cHpywd btn btn-primary">Ambiente de testes e homologações</button></h1><a class="sc-boZgaH hPBmwY">Ajuda</a></div></div></div></nav><div class="nav"><nav class="sc-cXPBUD jqEFJc navbar navbar-expand navbar-light"><div class="container" style="display: block; align-items: flex-start; padding-top: 90px; justify-content: center; text-align: center;"><div class="sc-gJCZQp bSRsHO"><div class="sc-dChVcU evxSMS"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.625 0.25C10.6602 0.25 11.5 1.08945 11.5 2.125V15.875C11.5 16.9102 10.6602 17.75 9.625 17.75H8.375C7.33984 17.75 6.5 16.9102 6.5 15.875V2.125C6.5 1.08945 7.33984 0.25 8.375 0.25H9.625ZM9.625 2.125H8.375V15.875H9.625V2.125ZM3.375 7.75C4.41016 7.75 5.25 8.58984 5.25 9.625V15.875C5.25 16.9102 4.41016 17.75 3.375 17.75H2.125C1.08945 17.75 0.25 16.9102 0.25 15.875V9.625C0.25 8.58984 1.08945 7.75 2.125 7.75H3.375ZM3.375 9.625H2.125V15.875H3.375V9.625ZM12.75 4.625C12.75 3.58984 13.5898 2.75 14.625 2.75H15.875C16.9102 2.75 17.75 3.58984 17.75 4.625V15.875C17.75 16.9102 16.9102 17.75 15.875 17.75H14.625C13.5898 17.75 12.75 16.9102 12.75 15.875V4.625ZM14.625 15.875H15.875V4.625H14.625V15.875Z" fill="#9654ff"></path></svg><p class="sc-rPWID iJnYoB" style="width: 100%;">Painel</p><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 7.17969L15 12.1797L13.8281 13.3516L10 9.52344L6.17188 13.3516L5 12.1797L10 7.17969Z"></path></svg></div></div><div class="sc-gJCZQp bSRsHO"></div><div class="sc-gJCZQp bSRsHO"><div class="sc-dChVcU evxSMS"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(150, 84, 255);"><path d="M10.625 5.3125C10.4688 5.11719 10.1953 5 9.96094 5C9.64844 5.03906 9.41406 5.11719 9.25781 5.3125L5.85938 9.0625C5.58594 9.33594 5.54688 9.72656 5.70312 10.0781C5.82031 10.4297 6.17188 10.625 6.52344 10.625H8.71094L8.75 14.0625C8.75 14.6094 9.14062 15 9.6875 15H10.3125C10.8203 15 11.2109 14.6094 11.2109 14.0625V10.625H13.3984C13.75 10.625 14.1016 10.4297 14.2578 10.0781C14.375 9.72656 14.3359 9.33594 14.0625 9.0625L10.625 5.3125ZM10 0C4.45312 0 0 4.49219 0 10C0 15.5469 4.45312 20 10 20C15.5078 20 20 15.5469 20 10C20 4.49219 15.5078 0 10 0ZM10 18.125C5.50781 18.125 1.875 14.4922 1.875 10C1.875 5.54688 5.50781 1.875 10 1.875C14.4531 1.875 18.125 5.54688 18.125 10C18.125 14.4922 14.4531 18.125 10 18.125Z"></path></svg><p class="sc-rPWID iJnYoB" style="width: 100%;">Gestão de Arquivos</p><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 7.17969L15 12.1797L13.8281 13.3516L10 9.52344L6.17188 13.3516L5 12.1797L10 7.17969Z"></path></svg></div></div><div class="sc-gJCZQp bSRsHO"><a class="sc-izQBue fEnRcq" href="/importar"><p class="sc-rPWID iJnYoB" style="width: 100%;">Importar Arquivos</p></a><a class="sc-izQBue fEnRcq" href="/historico"><p class="sc-rPWID iJnYoB" style="width: 100%;">Arquivos Importados</p></a></div><div class="sc-gJCZQp bSRsHO"><div class="sc-dChVcU evxSMS"><svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(150, 84, 255);"><path d="M18.4609 3.75H11.7422L9.82812 1.99219C9.35938 1.52344 8.73438 1.25 8.07031 1.25H3.46094C2.05469 1.25 0.960938 2.38281 0.960938 3.75V16.25C0.960938 17.6562 2.05469 18.75 3.46094 18.75H18.4609C19.8281 18.75 20.9609 17.6562 20.9609 16.25V6.25C20.9609 4.88281 19.8672 3.75 18.4609 3.75ZM19.0859 16.25C19.0859 16.6016 18.7734 16.875 18.4609 16.875H3.46094C3.10938 16.875 2.83594 16.6016 2.83594 16.25V3.75C2.83594 3.4375 3.10938 3.125 3.46094 3.125H8.03125C8.1875 3.125 8.34375 3.20312 8.46094 3.32031L10.9609 5.625H18.4609C18.7734 5.625 19.0859 5.9375 19.0859 6.25V16.25Z"></path></svg><p class="sc-rPWID iJnYoB" style="width: 100%;">TACH</p><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 7.17969L15 12.1797L13.8281 13.3516L10 9.52344L6.17188 13.3516L5 12.1797L10 7.17969Z"></path></svg></div></div><div class="sc-gJCZQp bSRsHO"><a class="sc-izQBue fEnRcq" href="/parametrizar-tach"><p class="sc-rPWID iJnYoB" style="width: 100%;">Parametrizar TACH</p></a><a class="sc-izQBue fEnRcq" href="/editar-tach"><p class="sc-rPWID iJnYoB" style="width: 100%;">Editar TACH</p></a><a class="sc-izQBue fEnRcq" href="/gestao-tarefas"><p class="sc-rPWID iJnYoB" style="width: 100%;">Aprovar TACH</p></a><a class="sc-izQBue fEnRcq" href="/administrador-tach"><p class="sc-rPWID iJnYoB" style="width: 100%;">Administrador TACH</p></a><a class="sc-izQBue fEnRcq" href="/historico-tach"><p class="sc-rPWID iJnYoB" style="width: 100%;">Histórico TACH</p></a></div><div class="sc-gJCZQp bSRsHO"><div class="sc-dChVcU evxSMS"><svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(150, 84, 255);"><path d="M7.70312 2.5H13.3281V0.9375C13.3281 0.429688 13.7188 0 14.2656 0C14.7734 0 15.2031 0.429688 15.2031 0.9375V2.5H16.7656C18.1328 2.5 19.2656 3.63281 19.2656 5V17.5C19.2656 18.9062 18.1328 20 16.7656 20H4.26562C2.85938 20 1.76562 18.9062 1.76562 17.5V5C1.76562 3.63281 2.85938 2.5 4.26562 2.5H5.82812V0.9375C5.82812 0.429688 6.21875 0 6.76562 0C7.27344 0 7.70312 0.429688 7.70312 0.9375V2.5ZM3.64062 17.5C3.64062 17.8516 3.91406 18.125 4.26562 18.125H16.7656C17.0781 18.125 17.3906 17.8516 17.3906 17.5V7.5H3.64062V17.5Z"></path></svg><p class="sc-rPWID iJnYoB" style="width: 100%;">Agenda Docente</p><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 7.17969L15 12.1797L13.8281 13.3516L10 9.52344L6.17188 13.3516L5 12.1797L10 7.17969Z"></path></svg></div></div><div class="sc-gJCZQp bSRsHO"><a class="sc-izQBue fEnRcq" href="/calendario"><p class="sc-rPWID iJnYoB" style="width: 100%;">Calendário da Agenda</p></a><a class="sc-izQBue fEnRcq" href="/editar-agenda"><p class="sc-rPWID iJnYoB" style="width: 100%;">Editar Agenda</p></a><a class="sc-izQBue fEnRcq" href="/chekin-parametros"><p class="sc-rPWID iJnYoB" style="width: 100%;">Parametrização de Check-in</p></a></div><div class="sc-gJCZQp bSRsHO"><div class="sc-dChVcU evxSMS"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(150, 84, 255);"><path d="M8.75 21.875L7.7 20.825L9.775 18.75H5.9C5.73333 19.4 5.38333 19.9375 4.85 20.3625C4.31667 20.7875 3.7 21 3 21C2.16667 21 1.45833 20.7083 0.875 20.125C0.291667 19.5417 0 18.8333 0 18C0 17.3 0.2125 16.6833 0.6375 16.15C1.0625 15.6167 1.6 15.2667 2.25 15.1V6.9C1.6 6.73333 1.0625 6.38333 0.6375 5.85C0.2125 5.31667 0 4.7 0 4C0 3.16667 0.291667 2.45833 0.875 1.875C1.45833 1.29167 2.16667 1 3 1C3.7 1 4.31667 1.2125 4.85 1.6375C5.38333 2.0625 5.73333 2.6 5.9 3.25H9.775L7.7 1.175L8.75 0.125L12.65 4L8.75 7.875L7.7 6.825L9.775 4.75H5.9C5.76667 5.28333 5.50833 5.74167 5.125 6.125C4.74167 6.50833 4.28333 6.76667 3.75 6.9V15.1C4.28333 15.2333 4.74167 15.4917 5.125 15.875C5.50833 16.2583 5.76667 16.7167 5.9 17.25H9.775L7.7 15.175L8.75 14.125L12.65 18L8.75 21.875ZM17 21C16.1667 21 15.4583 20.7083 14.875 20.125C14.2917 19.5417 14 18.8333 14 18C14 17.3 14.2125 16.6833 14.6375 16.15C15.0625 15.6167 15.6 15.2667 16.25 15.1V6.9C15.6 6.73333 15.0625 6.38333 14.6375 5.85C14.2125 5.31667 14 4.7 14 4C14 3.16667 14.2917 2.45833 14.875 1.875C15.4583 1.29167 16.1667 1 17 1C17.8333 1 18.5417 1.29167 19.125 1.875C19.7083 2.45833 20 3.16667 20 4C20 4.7 19.7875 5.31667 19.3625 5.85C18.9375 6.38333 18.4 6.73333 17.75 6.9V15.1C18.4 15.2667 18.9375 15.6167 19.3625 16.15C19.7875 16.6833 20 17.3 20 18C20 18.8333 19.7083 19.5417 19.125 20.125C18.5417 20.7083 17.8333 21 17 21ZM3 19.5C3.43333 19.5 3.79167 19.3542 4.075 19.0625C4.35833 18.7708 4.5 18.4167 4.5 18C4.5 17.5667 4.35833 17.2083 4.075 16.925C3.79167 16.6417 3.43333 16.5 3 16.5C2.58333 16.5 2.22917 16.6417 1.9375 16.925C1.64583 17.2083 1.5 17.5667 1.5 18C1.5 18.4167 1.64583 18.7708 1.9375 19.0625C2.22917 19.3542 2.58333 19.5 3 19.5ZM17 19.5C17.4333 19.5 17.7917 19.3542 18.075 19.0625C18.3583 18.7708 18.5 18.4167 18.5 18C18.5 17.5667 18.3583 17.2083 18.075 16.925C17.7917 16.6417 17.4333 16.5 17 16.5C16.5833 16.5 16.2292 16.6417 15.9375 16.925C15.6458 17.2083 15.5 17.5667 15.5 18C15.5 18.4167 15.6458 18.7708 15.9375 19.0625C16.2292 19.3542 16.5833 19.5 17 19.5ZM3 5.5C3.43333 5.5 3.79167 5.35417 4.075 5.0625C4.35833 4.77083 4.5 4.41667 4.5 4C4.5 3.56667 4.35833 3.20833 4.075 2.925C3.79167 2.64167 3.43333 2.5 3 2.5C2.58333 2.5 2.22917 2.64167 1.9375 2.925C1.64583 3.20833 1.5 3.56667 1.5 4C1.5 4.41667 1.64583 4.77083 1.9375 5.0625C2.22917 5.35417 2.58333 5.5 3 5.5ZM17 5.5C17.4333 5.5 17.7917 5.35417 18.075 5.0625C18.3583 4.77083 18.5 4.41667 18.5 4C18.5 3.56667 18.3583 3.20833 18.075 2.925C17.7917 2.64167 17.4333 2.5 17 2.5C16.5833 2.5 16.2292 2.64167 15.9375 2.925C15.6458 3.20833 15.5 3.56667 15.5 4C15.5 4.41667 15.6458 4.77083 15.9375 5.0625C16.2292 5.35417 16.5833 5.5 17 5.5Z"></path></svg><p class="sc-rPWID iJnYoB" style="width: 100%;">Fluxos de Aprovação</p><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 7.17969L15 12.1797L13.8281 13.3516L10 9.52344L6.17188 13.3516L5 12.1797L10 7.17969Z"></path></svg></div></div><div class="sc-gJCZQp bSRsHO"><a aria-current="page" class="sc-izQBue fEnRcq active" href="/workflows" style="color: rgb(61, 61, 61);"><p class="sc-rPWID iJnYoB" style="width: 100%;">Aprovações</p></a></div><div class="sc-gJCZQp bSRsHO"><div class="sc-dChVcU evxSMS"><svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(150, 84, 255);"><path d="M18.3281 0.25H6.45312C5.24219 0.25 4.26562 1.26562 4.26562 2.4375V14.9375C4.26562 15.4844 3.83594 15.875 3.32812 15.875C2.78125 15.875 2.39062 15.4844 2.39062 14.9375V3.375C2.39062 2.86719 1.96094 2.4375 1.45312 2.4375C0.90625 2.4375 0.515625 2.86719 0.515625 3.375V14.9375C0.515625 16.5 1.76562 17.75 3.32812 17.75H17.0781C18.9531 17.75 20.5156 16.2266 20.5156 14.3125V2.4375C20.5156 1.26562 19.5 0.25 18.3281 0.25ZM18.6406 14.3125C18.6406 15.2109 17.9375 15.875 17.0781 15.875H5.94531C6.0625 15.6016 6.14062 15.2891 6.14062 14.9375V2.4375C6.14062 2.28125 6.25781 2.125 6.45312 2.125H18.3281C18.4844 2.125 18.6406 2.28125 18.6406 2.4375V14.3125ZM10.8281 9.625H8.32812C7.78125 9.625 7.39062 10.0547 7.39062 10.5625C7.39062 11.1094 7.78125 11.5 8.32812 11.5H10.8281C11.3359 11.5 11.7656 11.1094 11.7656 10.5625C11.7656 10.0547 11.3359 9.625 10.8281 9.625ZM16.4531 9.625H13.9531C13.4062 9.625 13.0156 10.0547 13.0156 10.5625C13.0156 11.1094 13.4062 11.5 13.9531 11.5H16.4531C16.9609 11.5 17.3906 11.1094 17.3906 10.5625C17.3906 10.0547 16.9609 9.625 16.4531 9.625ZM10.8281 12.75H8.32812C7.78125 12.75 7.39062 13.1797 7.39062 13.6875C7.39062 14.2344 7.78125 14.625 8.32812 14.625H10.8281C11.3359 14.625 11.7656 14.2344 11.7656 13.6875C11.7656 13.1797 11.3359 12.75 10.8281 12.75ZM16.4531 12.75H13.9531C13.4062 12.75 13.0156 13.1797 13.0156 13.6875C13.0156 14.2344 13.4062 14.625 13.9531 14.625H16.4531C16.9609 14.625 17.3906 14.2344 17.3906 13.6875C17.3906 13.1797 16.9609 12.75 16.4531 12.75ZM16.1406 3.375H8.64062C7.9375 3.375 7.39062 3.96094 7.39062 4.625V7.125C7.39062 7.82812 7.9375 8.375 8.64062 8.375H16.1406C16.8047 8.375 17.3906 7.82812 17.3906 7.125V4.625C17.3906 3.96094 16.8047 3.375 16.1406 3.375Z"></path></svg><p class="sc-rPWID iJnYoB" style="width: 100%;">Relatórios</p><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 7.17969L15 12.1797L13.8281 13.3516L10 9.52344L6.17188 13.3516L5 12.1797L10 7.17969Z"></path></svg></div></div><div class="sc-gJCZQp bSRsHO"><a class="sc-izQBue fEnRcq" href="/relatorios"><p class="sc-rPWID iJnYoB" style="width: 100%;">Relatórios</p></a></div><div class="sc-gJCZQp bSRsHO"><div class="sc-dChVcU evxSMS"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(150, 84, 255);"><path d="M8.01261 12C8.01261 9.47344 9.98605 7.5 12.5126 7.5C14.997 7.5 17.0126 9.47344 17.0126 12C17.0126 14.4844 14.997 16.5 12.5126 16.5C9.98605 16.5 8.01261 14.4844 8.01261 12ZM12.5126 9.75C11.2704 9.75 10.2626 10.7578 10.2626 12C10.2626 13.2422 11.2704 14.25 12.5126 14.25C13.7548 14.25 14.7626 13.2422 14.7626 12C14.7626 10.7578 13.7548 9.75 12.5126 9.75ZM14.2517 1.40625e-05C15.2923 1.40625e-05 16.197 0.712031 16.4407 1.72219L16.8064 3.24422C17.2048 3.43875 17.5845 3.65953 17.9454 3.90375L19.4501 3.46078C20.4486 3.16688 21.5173 3.59391 22.0376 4.49391L23.7767 7.50469C24.2923 8.40469 24.1282 9.54375 23.3782 10.2609L22.2392 11.3016C22.2532 11.5594 22.2626 11.7797 22.2626 12C22.2626 12.2203 22.2532 12.4406 22.2392 12.6562L23.3782 13.7391C24.1282 14.4563 24.2923 15.5953 23.7767 16.4953L22.0376 19.5047C21.5173 20.4047 20.4486 20.8313 19.4501 20.5406L17.9454 20.0953C17.5845 20.3391 17.2048 20.5594 16.8064 20.7562L16.4407 22.2797C16.197 23.2875 15.2923 24 14.2517 24H10.7736C9.73293 24 8.82824 23.2875 8.58449 22.2797L8.21886 20.7562C7.82043 20.5594 7.44074 20.3391 7.0798 20.0953L5.53293 20.5406C4.57808 20.8313 3.5098 20.4047 2.98996 19.5047L1.2509 16.4953C0.731052 15.5953 0.895489 14.4563 1.6484 13.7391L2.78465 12.6562C2.77011 12.4406 2.76261 12.2203 2.76261 11.9578C2.76261 11.7797 2.77011 11.5594 2.78465 11.3016L1.6484 10.2609C0.895442 9.54375 0.731052 8.40469 1.2509 7.50469L2.98996 4.49391C3.5098 3.59391 4.57808 3.16688 5.53293 3.46078L7.0798 3.90375C7.44074 3.65953 7.82043 3.43875 8.21886 3.24422L8.58449 1.72219C8.82824 0.711563 9.73293 0 10.7736 0L14.2517 1.40625e-05ZM10.1454 4.85625L9.62043 5.07656C9.02512 5.325 8.47199 5.64844 7.97043 6.03281L7.51574 6.37969L4.93855 5.62031L3.19902 8.62969L5.14433 10.4813L5.07261 11.0438C5.03324 11.3578 5.01261 11.6766 5.01261 12C5.01261 12.3234 5.03324 12.6422 5.07261 12.9562L5.14433 13.5187L3.19949 15.3703L4.93855 18.3797L7.51574 17.6203L7.97043 17.9672C8.47199 18.3516 9.02512 18.675 9.62043 18.9234L10.1454 19.1437L10.7736 21.75H14.2517L14.8798 19.1437L15.4048 18.9234C16.0001 18.675 16.5532 18.3516 17.0548 17.9672L17.5095 17.6203L20.0876 18.3797L21.8267 15.3703L19.8814 13.5187L19.9517 12.9562C19.9939 12.6422 20.0126 12.3234 20.0126 12C20.0126 11.6766 19.9939 11.3578 19.9517 11.0438L19.8814 10.4813L21.8267 8.62969L20.0876 5.62031L17.5095 6.37969L17.0548 6.03281C16.5532 5.64844 16.0001 5.325 15.4048 5.07656L14.8798 4.85625L14.2517 2.25H10.7736L10.1454 4.85625Z"></path></svg><p class="sc-rPWID iJnYoB" style="width: 100%;">Configurações</p><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 7.17969L15 12.1797L13.8281 13.3516L10 9.52344L6.17188 13.3516L5 12.1797L10 7.17969Z"></path></svg></div></div><div class="sc-gJCZQp bSRsHO"><a class="sc-izQBue fEnRcq" href="/associacao-atividade"><p class="sc-rPWID iJnYoB" style="width: 100%;">Associação de Atividade</p></a><a class="sc-izQBue fEnRcq" href="/associacao-coordenador"><p class="sc-rPWID iJnYoB" style="width: 100%;">Associação de Coordenador</p></a><a class="sc-izQBue fEnRcq" href="/gestao-usuarios"><p class="sc-rPWID iJnYoB" style="width: 100%;">Gestão de Usuários</p></a><a class="sc-izQBue fEnRcq" href="/gerenciar-permissao"><p class="sc-rPWID iJnYoB" style="width: 100%;">Gerenciar Permissões</p></a><a class="sc-izQBue fEnRcq" href="/gerenciar-abono"><p class="sc-rPWID iJnYoB" style="width: 100%;">Motivo de Abono</p></a><a class="sc-izQBue fEnRcq" href="/termo-de-aceite"><p class="sc-rPWID iJnYoB" style="width: 100%;">Termo de Aceite</p></a><a class="sc-izQBue fEnRcq" href="/help"><p class="sc-rPWID iJnYoB" style="width: 100%;">Help</p></a></div></div><a href="/aviso-de-privacidade" target="_blank" rel="noopener noreferrer" class="sc-gJCZQp bSRsHO d-flex w-100 justify-content-start" style="padding-left: 15px; padding-right: 15px; margin-top: 20px; cursor: pointer; text-decoration: none; min-height: 24px;"><p class="sc-rPWID iJnYoB" style="color: rgb(138, 5, 56);">Aviso de privacidade</p></a><div class="container" style="flex-direction: column; padding-top: 20px; align-items: flex-start;"><div class="sc-jBeBSR bsGTUE" style="margin-left: 15px;"></div><div class="d-flex align-items-center" style="margin-left: 15px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABUCAYAAAACoiByAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAvzSURBVHhe7ZtrjFXVFcf3IGWmqTASKqEkKKSMkYitFUxaTTChwwdspYxiUFOgKUTiaInVVr6UpgH7AVorYkqcggmPGMb4GEWBtggVLJjUQaEMaTszUWBSkSGxPPoBqHq7f+vedWfPmXOf53HvNeeX3Nxzzz2Pvf977bXW3vucupTFJETOsMx3QsQkQsdEInRMJELHRCJ0TCRCx0QidEwkQsdEzQl97sQp07f/ffmuJWpO6K4tO0x7c6t81xKJ64iJmpnrOLBqozm46rnMrwHu3f17M+H2mzO/qpfEouMCi64l/rpyQ2rNl74t37VEYtExUVNCk9L1bt8v26R4l87+V7ZrgZoJhj1W4F1LVg0St/6qK20wXG/GfrMps6d6qQmhyZl3LXki82soc19abZrmzMj8qk5iF5ouP/YbTWKNxYIVdz7TbvoP95hrbCo3+QczTO9r+83Jfe/J76kLv1fy9fr/3mMmzPhWZk8MIHRU7Fy8KtX92j7ZvvifC6lN0xdIxvD01c2po5vfkP1x07muXe5POSgP5QLKSXmjIjKLdru7dmv8rAv7Z29ckdMaD617wfS8PvicfEz7yfycLgQr7rhnuemzvcCF3iDzJ5n9UbmhyISmYozmDj3zQmaPP4jc8uLqIaM7zm+7rkW+i4VrLe3uGNJwfoHUj1tXLDa3rViS+RUukaV3VHbmk4+IheSDyrfPesjs/dnaQUL0bN+XU5hR14zLbA2G4zlP4fer85bLJ9e1FIbyUYkMkQdDRPR211w0Xvs1aRhN1zgPF6RTolh905zb5f/+Iz3yX/+RbvmPc3ED2jM4F9dV7HQq7qKQUQQhUqF1IggLPH/yY+uPf2EtfaRYmMvM3z4i4nVan9z39ntm0btbRLhyQWQaePKdM8z0ZfOlUegxLliw7tfyUY5p9vgoiExoKrH5loVS2ZaXV4v1YXEEOLfSVI50raFxpLibtsktpq6uzoyaWL7Q54+fMqOuHWfufXO9uIyL5y7I/d3ZPxqd8uC/sWbmuEn5gjZyLiITGpERG/HILDSSUyFyaSCPRQyOpYtz3KF17dn/g0Bga5w43ux97CnbW64TC9483ZbJigl6b6ARNEbgejg2bCIJhnsfWysigxuE2G55aY2IX99osw27jcA2l5X/cClhiAxY767F6Uzjkr0+95lrexb3xWLV2hXdxu3g8sLmil9ZMtuhQEF3P7wm8yud2+InKTz7T/2tSxrhzudXiV9usD77xoXfN1c0jBgiMqJ8duly5lc62yCTabFBC7H6D3ebS+fyZxNYNvfiPnyGN9Sbf774pjl/4mPz54dXm+H19eamB1pk1PlJ9wk5h3IQdL8yboz8DoNQXQdWoW5AwQ9OXXCHBCdF/bYXGgArzHZvhtf2XET15tkuNC7ndm0lCxlwDbOfW+HrbzvuXm56nYEQrqJr605xIQpGgL8Oi1CFJrB4MwovWOWPOreK+8gFAZMeoNZKfkvP8DuHxj3whB0Y2XOAXoDV08C54Jy2JjsYKtAbwhwlhh4MZRSGb8xRCawnn3Uq9Iq9j67NWh6WSabgnsu9/mLjgfYgesod1orzNaKSzygwBq5TTDmLJZKsA4vZacV2uydglVhbKXgbDkvF7yIw/0G5wnBdXIYLrmrmkz8tqrFKIbL0DiRtsoIgElOjizqH+jw33YsSN51TMIhN0xfIYAWXg0+PYkIJIhUa6NZYDlaiQ2sXhD5nBxhTF+X2qUHp2rzD5tTplM4LgZQRabEup1wiF7oQCA1+IoRFHPcoRLIKHhNVL7Sbk+cDf1vNVL3Qf2i6S4bTuYRkP/MUHfMez+ypTkIXmpEZwvAJK5tg8MJqizcVY5DCfh2sBIXAmC273Q6TUIOh3yQ/6VK+dcFCgeo3I76T2UpDruydiQO/9E0pdA96Rfus1uzwXaHsYS0GhGbR5MuIzGACIfiwzaCCqUo/qBiTO6WgDemKXAzcJ5e/Z9GWsrhlZ3CVLvvgBYNyCUVoLIJFWEZVzEtgdXzYZh9d3ltJuqd3Agp0Vabc4KY+2zvVyX24H9d2YT+N5y07I1iG9IUWl4slFKF13c5vVUT3seoBVIoA5xXCxfXJzKDhFvKhM3WFfDaNwLV1UQL0m8UBL2NvGli7DEooQrMOCCqmi7uPxVL8OFbEkBf/l0tERGFEiXViaUwoMafhwm+uwf9MEOkqiR/ch2Uz7ou4iM3xirdnAXPUoPULQihCM7Sm0jzs4haYCmmmgB/U+V7839KejqLmFbAmCbI2g7lvz7PiR0H86Z715pi9Jv+rZeaDhVfui0sALJ/nPYC5bLfsbDMpRr38pg5KJRShKVTD6JFiTbgFrEU/Cv9RaAIN/q/UeQUaadMtP5RVEoXr6wxesXBfFh0oB+XRHuAtO9vQOGm8r7WXSmChEYBCuRbFtp+F0RhkC7m6dyE4T7OAoAGTcrDa7sVbdo0ppTaol0BC09L4Ofzfsv7d5ueX35EPrsEL06RUAKHIWSsFInN/ynHx7AUplxd8udblgZ5X5JhiHinLRyChsWZuTjByXQGugW4JMg9tMwfmomkMGkEFrwRkHdwf17HszO5suVRwvt2HaFjZufWXS6SeGmPKIZDQmlH4pUbM/wKF1mBCY0ij2Mjft38gZSq0dhcUAml9Y9q3E/TogeTKCuVCTN320mDLCzyIUy6BhFaB3QcLAZei8xzeVWgqgvDqBxHA9Yk8sRQG3uuQE2OVfFR0FxWTcntdhJbPb0W9WAIJzaNcwOhJk3oKxXqectHHWhkOZ7tqZlCgkZ0e4JczFwvnkVtr91eR9JEz/uf5Pi+uW2BVXctDekr96IU861EugYTWlWkqQy7LBJCmXOSqFO6g9YnaCBRen/DUxwG08LwqofAfjyRozlwM3Ivjl/YOzs9VQDUKlsywWMpBudlGSMYANAJuhfyaTIP6MGiivIw8/dxKsYQye0eBqRBDcbplk60UYkkDNLcO8cHMK1BwRR9sJMJ7oZLuYwdANuDO6nE9fKxf10YwGsFdGPZb/eYYZvdwawjN+zGXrE/GPVKXwIMWhI6Ss8c/SnU+3Z565a7HU3sefSr7TosL77PwTkm+91pOvnUo9ezX58pxIO+gTFsg+3PB27W5rss+ykO52KacUVI1rygjIi/xFKqwipavUeD04W653rbvPpjZU1kqIjQi6dtQigjz1eZBb0qVC+dbdyTX47ou/OfdFweBgmGpEBT5EIB4b9AFH8hAJx1YW7NRv1Tc83nq1Otb9b4MXIIMQEolVqFP2kEKHzKA4SNGiCguBB3NYshevAGrEBwvItuBlEzBOoMSQPwx10+SxtZgHRsZy44Fum3f24dTO3+8UnwxwcgPurYGvm3NramjW3bk9N0SbNe1i6vgeM7L5Rq4H8cTkClHUBdVCrE/qUTqhDWRk1oBzRlrVbkefKR7c7ymh6Rv7ioOUwDqYkjPuA7X9oPc/pN/HDefXr6cHTW6cxpRE7vQ+Gd84/Av18vT/Gc//Ej25xIb6OoIpUtmXEMHD8Xkuf1Hes2BlRvMbTbX5t4cT6MFGYCUSkWevTtztFcETgfGCzLYUL8ZNjQQy1x3b/+dOfXuMWkkLDnIvEU5xBoMlatvnCwWSGVVZAITbiLMAKUNyYiza9Mb5ob7ZkuAjFtkqIjQQGWpNBYGZAqIz+tvdO8jG1+V/aVy/sRpWYzgGlyfhuMzp/3X5oM/HSxqnTIKKiY0qFXLxwY5/C0rzmOmTDINo0fJ4oBaOA3Ch+B39oN/ZwXktzYWx58+8q9BKzzMf6tvv/mhe+S7ElRUaCAgYXkIghXiP489v8uMnjxBuj0fQFAE45gN188Tt6AuR+fDuRaZCA2XzUbsPq5daSoSDPOR+vxzs23mg2bctCny210m47U1pjk//OM7Zsr8WbKPARBwHMIjcLpnXJmdg64GKm7RXuqGDTP3v9Um6R7+9P22l81n//tU/mPakn11wwZWr3U5DYF1JKjuqFpEhqqzaC+4Be/Khh35masmjs/8SruHaqfqhf6iUHWu44tKInRMJELHRCJ0TCRCx0QidEwkQsdEInRMJELHRCJ0TCRCx4Ix/weWMsxyzMJgHQAAAABJRU5ErkJggg==" alt="Avatar" style="border-radius: 50%; width: 40px; height: 40px; margin: 24px 8px 24px 0px;"><p class="sc-jwZKMi vKiJN">Diogo Jose Varaschin de Oliveira</p></div><div class="sc-jBeBSR bsGTUE" style="margin-left: 15px;"></div><div class="sc-gJCZQp bSRsHO d-flex w-100 mt-4 background-leave justify-content-start" style="height: 40px; padding-left: 15px; padding-right: 15px; cursor: pointer;"><svg width="22" height="20" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(78, 78, 78);"><path d="M21.2757 10.9417C21.7965 10.4208 21.7965 9.57499 21.2757 9.05416L15.9423 3.72082C15.4215 3.19999 14.5757 3.19999 14.0548 3.72082C13.534 4.24166 13.534 5.08749 14.0548 5.60832L17.1132 8.66666H8.33398C7.59648 8.66666 7.00065 9.26249 7.00065 9.99999C7.00065 10.7375 7.59648 11.3333 8.33398 11.3333H17.1132L14.0548 14.3917C13.534 14.9125 13.534 15.7583 14.0548 16.2792C14.5757 16.8 15.4215 16.8 15.9423 16.2792L21.2757 10.9458V10.9417ZM7.00065 3.33332C7.73815 3.33332 8.33398 2.73749 8.33398 1.99999C8.33398 1.26249 7.73815 0.666656 7.00065 0.666656H4.33398C2.12565 0.666656 0.333984 2.45832 0.333984 4.66666V15.3333C0.333984 17.5417 2.12565 19.3333 4.33398 19.3333H7.00065C7.73815 19.3333 8.33398 18.7375 8.33398 18C8.33398 17.2625 7.73815 16.6667 7.00065 16.6667H4.33398C3.59648 16.6667 3.00065 16.0708 3.00065 15.3333V4.66666C3.00065 3.92916 3.59648 3.33332 4.33398 3.33332H7.00065Z"></path></svg><p class="sc-rPWID iJnYoB" style="color: rgb(78, 78, 78);">Sair</p></div></div><div class="container"><span class="sc-gtJxfw hHuaph">V.32.0.24 de 24/06/2026</span></div></nav></div><section class="sc-blKGMR juYwsX"><main><div class="sc-fifgRP kQwENr"><h1 class="sc-dlWCHZ hLjJTY">Aprovações</h1><h3 class="sc-hHOBiw cZhMPf">Nesse espaço você pode analisar fluxos e solicitações.</h3></div><div class="sc-kWtpeL bwuZQX"><div class="sc-leSDtu kCAJXq card"><div class="card-body"><div class="align-items-center row"><div style="display: flex; height: 50px;"><span class="sc-klVQfs cHJoMG" style="margin-right: 20px; width: 200px; justify-content: center;">Selecionar tipo de fluxo de aprovação</span><select class="form-select" style="width: 400px;"><option value="-1" disabled="" selected="">Selecionar tipo de fluxo de aprovação</option><option value="2">Abono Legal</option><option value="3">Gestão de Atividades</option><option value="5">Documento TACH</option></select></div></div><div class="row" style="margin-top: 1em; border-top: 1.8px solid rgb(203, 204, 204); padding-top: 1em; justify-content: space-between;"><div style="display: flex; justify-content: space-between;"><span class="sc-klVQfs cHJoMG" style="margin-right: 20px; margin-top: 20px;">Filtrar</span><div class="sc-kpKSZj exZIB form-check form-check-inline" style="margin-top: 20px;"><input name="group1" type="radio" id="inline-1" class="form-check-input" style=""><label title="" for="inline-1" class="form-check-label">Em andamento</label></div><div class="sc-kpKSZj exZIB form-check form-check-inline" style="margin-top: 20px;"><input name="group1" type="radio" id="inline-2" class="form-check-input" style=""><label title="" for="inline-2" class="form-check-label">Concluído</label></div><div style="width: 300px; margin-top: 13px;"><div class="sc-fIGJwM ckAxCN input-group"><span class="sc-bVHCgj gmodeM input-group-text"><svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(120, 120, 120);"><path d="M7.70312 2.5H13.3281V0.9375C13.3281 0.429688 13.7188 0 14.2656 0C14.7734 0 15.2031 0.429688 15.2031 0.9375V2.5H16.7656C18.1328 2.5 19.2656 3.63281 19.2656 5V17.5C19.2656 18.9062 18.1328 20 16.7656 20H4.26562C2.85938 20 1.76562 18.9062 1.76562 17.5V5C1.76562 3.63281 2.85938 2.5 4.26562 2.5H5.82812V0.9375C5.82812 0.429688 6.21875 0 6.76562 0C7.27344 0 7.70312 0.429688 7.70312 0.9375V2.5ZM3.64062 17.5C3.64062 17.8516 3.91406 18.125 4.26562 18.125H16.7656C17.0781 18.125 17.3906 17.8516 17.3906 17.5V7.5H3.64062V17.5Z"></path></svg></span><span class="sc-iQbOkh eTyekG p-calendar p-component p-inputwrapper p-inputwrapper-filled" data-pc-name="calendar" data-pc-section="root"><input class="p-inputtext p-component" autocomplete="off" type="text" role="combobox" aria-expanded="false" aria-autocomplete="none" aria-haspopup="dialog" aria-controls="pr_id_8_panel" inputmode="none" data-pc-name="inputtext" data-pc-section="root" style=""></span></div></div><div style="width: 350px; margin-top: 13px;"><div class="sc-bDpDS jpfHKP input-group"><span class="sc-bVHCgj gmodeM input-group-text"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.8148 13.0391L10.6742 9.89844C11.3539 9.06641 11.7289 8.01875 11.7289 6.875C11.7289 4.18203 9.54618 2 6.85391 2C4.16165 2 2 4.18273 2 6.875C2 9.56727 4.1825 11.75 6.85391 11.75C7.99743 11.75 9.04649 11.3537 9.87735 10.6944L13.018 13.835C13.1492 13.9461 13.2945 14 13.4375 14C13.5805 14 13.7253 13.9451 13.8352 13.8352C14.0539 13.6156 14.0539 13.2594 13.8148 13.0391ZM3.125 6.875C3.125 4.80734 4.80735 3.125 6.875 3.125C8.94266 3.125 10.625 4.80734 10.625 6.875C10.625 8.94266 8.94266 10.625 6.875 10.625C4.80735 10.625 3.125 8.94219 3.125 6.875Z" fill="#787878"></path></svg></span><input placeholder="Pesquise por professor" type="text" class="sc-dSIIpw bUiMaz form-control" value="" style=""></div></div><div><button type="button" class="sc-aXZVg sc-gEvEer uWUrp bmVXH btn btn-primary" style="width: 126px; margin-left: 20px; margin-top: 10px;">Filtrar</button></div></div></div><div class="row" style="padding-top: 25px; padding-left: 15px; padding-right: 15px;"><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ADRIANA MOCELIM</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ADRIANO AKIRA FERREIRA HINO</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">AFONSO FERREIRA MIGUEL</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">AIRTON OLIVEIRA SILVA TRENTO</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ALCEU DE SOUZA BRITTO JUNIOR</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ALEXANDRA FERREIRA MARTINS RIBEIRO</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ALEXANDRE LUIS MULLER</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ALINE VANELI PELIZZONI</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ALTAIR OLIVO SANTIN</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-jkTpcO cSATRl card"><div><p class="sc-iHbSHJ ksPSlk">Gestão de Atividades</p><span class="sc-klVQfs cHJoMG">ANA LUCIA TOLAZZI</span><div><span class="sc-bypJrT dfUWbV">Enviado em: 01/07/2026</span></div></div><div class="sc-bDumWk heTtJe"><div color="#FFFDD9" class="sc-gIEZMH bZuJOC"><svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(225, 225, 225);"><g clip-path="url(#clip0_10941_90244)"><path d="M16.8096 14.3457L9.72737 2.25977C9.18516 1.33008 7.81686 1.33008 7.271 2.25977L0.192092 14.3457C-0.352772 15.2721 0.325867 16.4375 1.41795 16.4375H15.5824C16.6701 16.4375 17.3508 15.2754 16.8096 14.3457ZM7.70197 6.07812C7.70197 5.63818 8.05891 5.28125 8.49885 5.28125C8.93879 5.28125 9.29572 5.63984 9.29572 6.07812V10.3281C9.29572 10.7681 8.93879 11.125 8.52873 11.125C8.11867 11.125 7.70197 10.7697 7.70197 10.3281V6.07812ZM8.49885 14.3125C7.92244 14.3125 7.45494 13.845 7.45494 13.2686C7.45494 12.6922 7.92211 12.2247 8.49885 12.2247C9.07559 12.2247 9.54276 12.6922 9.54276 13.2686C9.54143 13.8443 9.07658 14.3125 8.49885 14.3125Z" fill="#D48806"></path></g><defs><clipPath id="clip0_10941_90244"><rect width="17" height="17" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg><span>Pendências de check-ins</span></div><button type="button" class="sc-cmaqmh dpHgWg btn btn-link"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(138, 5, 56);"><path d="M9.49219 13.2812C9.0625 13.7109 8.39844 13.7109 7.96875 13.2812L5.46875 10.7812C5.03906 10.3516 5.03906 9.6875 5.46875 9.25781C5.89844 8.82812 6.5625 8.82812 6.99219 9.25781L8.75 10.9766L12.9688 6.75781C13.3984 6.32812 14.0625 6.32812 14.4922 6.75781C14.9219 7.1875 14.9219 7.85156 14.4922 8.28125L9.49219 13.2812ZM20 10C20 15.5469 15.5078 20 10 20C4.45312 20 0 15.5469 0 10C0 4.49219 4.45312 0 10 0C15.5078 0 20 4.49219 20 10ZM10 1.875C5.50781 1.875 1.875 5.54688 1.875 10C1.875 14.4922 5.50781 18.125 10 18.125C14.4531 18.125 18.125 14.4922 18.125 10C18.125 5.54688 14.4531 1.875 10 1.875Z"></path></svg>Analisar Fechamento</button></div></div><div class="sc-cHMHOW brQzqN"><p class="sc-laNGHT lgZpOK pagination_label_legend">Itens por página: 10</p><svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor: default; fill: rgb(196, 160, 255); margin-right: 12px;"><path d="M10.3279 3.04374C10.9044 2.44875 10.8893 1.49912 10.2944 0.922681C9.69937 0.346242 8.74974 0.361278 8.1733 0.956264L10.3279 3.04374ZM1.5 10L0.422681 8.95626C-0.140894 9.53797 -0.140894 10.462 0.422681 11.0437L1.5 10ZM8.1733 19.0437C8.74974 19.6387 9.69937 19.6538 10.2944 19.0773C10.8893 18.5009 10.9044 17.5513 10.3279 16.9563L8.1733 19.0437ZM8.1733 0.956264L0.422681 8.95626L2.57732 11.0437L10.3279 3.04374L8.1733 0.956264ZM0.422681 11.0437L8.1733 19.0437L10.3279 16.9563L2.57732 8.95626L0.422681 11.0437Z"></path></svg><p class="sc-laNGHT lgZpOK">1-10 de 205</p><svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer; fill: rgb(150, 84, 255); margin-left: 12px; margin-right: 16px;"><path d="M1.17206 16.9563C0.595625 17.5513 0.610661 18.5009 1.20565 19.0773C1.80063 19.6538 2.75026 19.6387 3.3267 19.0437L1.17206 16.9563ZM10 10L11.0773 11.0437C11.6409 10.462 11.6409 9.53797 11.0773 8.95626L10 10ZM3.3267 0.956265C2.75026 0.361277 1.80063 0.346242 1.20565 0.922683C0.610659 1.49912 0.595624 2.44875 1.17206 3.04374L3.3267 0.956265ZM3.3267 19.0437L11.0773 11.0437L8.92268 8.95626L1.17206 16.9563L3.3267 19.0437ZM11.0773 8.95626L3.3267 0.956265L1.17206 3.04374L8.92268 11.0437L11.0773 8.95626Z"></path></svg></div></div></div></div></div></main><div id="loading-container-id" class="container-none"><span class="custom-loader"></span><p style="font-size: 18px;">Carregando</p></div></section></section></div></div><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;0f560f6ff8e542abbb39dc2363d893ed&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+</body></html>

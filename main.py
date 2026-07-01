@@ -12,7 +12,9 @@ from playwright.sync_api import sync_playwright
 import openpyxl
 import math
 import os
+import subprocess
 import time
+import urllib.request
 
 # ============================================================
 #  CONFIGURAÇÃO — ajuste aqui antes de rodar
@@ -22,11 +24,47 @@ DATA_INICIO   = "01/07/2026"   # DD/MM/AAAA  ← altere aqui
 DATA_FIM      = "07/07/2026"   # DD/MM/AAAA  ← altere aqui
 ARQUIVO_SAIDA = f"professores_{DATA_INICIO.replace('/','_')}_{DATA_FIM.replace('/','_')}.xlsx"
 
-# Perfil padrão do Edge (mesmo usado no dia a dia, com sessões/senhas salvas).
-# IMPORTANTE: feche todas as janelas do Edge antes de rodar o script,
-# pois o Windows bloqueia o perfil enquanto ele estiver em uso.
+# O script abre o Edge sozinho (com depuração remota habilitada) usando o seu
+# perfil normal do dia a dia, e roda a automação em uma nova aba nele.
+# Não é necessário editar nenhum atalho — isso é feito automaticamente.
+EDGE_EXECUTAVEL    = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 EDGE_USER_DATA_DIR = os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\Edge\User Data")
+EDGE_DEBUG_URL     = "http://localhost:9222"
 # ============================================================
+
+
+def _cdp_disponivel() -> bool:
+    try:
+        urllib.request.urlopen(f"{EDGE_DEBUG_URL}/json/version", timeout=1)
+        return True
+    except Exception:
+        return False
+
+
+def garantir_edge_com_debug():
+    """Garante que o Edge esteja rodando com depuração remota habilitada,
+    abrindo-o automaticamente se necessário (usando o perfil padrão do usuário)."""
+    if _cdp_disponivel():
+        return
+
+    subprocess.Popen([
+        EDGE_EXECUTAVEL,
+        "--remote-debugging-port=9222",
+        f"--user-data-dir={EDGE_USER_DATA_DIR}",
+    ])
+
+    for _ in range(40):
+        if _cdp_disponivel():
+            return
+        time.sleep(0.5)
+
+    raise RuntimeError(
+        "Não foi possível habilitar a depuração remota do Edge.\n"
+        "   Isso costuma acontecer quando o Edge já está aberto em outra janela\n"
+        "   ou processo em segundo plano. Feche TODAS as janelas do Edge\n"
+        "   (confira o Gerenciador de Tarefas por processos 'msedge.exe')\n"
+        "   e rode o script novamente."
+    )
 
 
 def selecionar_intervalo_datas(page, data_inicio: str, data_fim: str):
@@ -48,14 +86,14 @@ def selecionar_intervalo_datas(page, data_inicio: str, data_fim: str):
     }
 
     def abrir_calendario():
-        # Clica no campo que exibe o intervalo de datas (ex.: "01/07/2026 - 01/07/2026")
-        page.locator(r"text=/\d{2}\/\d{2}\/\d{4}\s*-\s*\d{2}\/\d{2}\/\d{4}/").first.click()
-        time.sleep(0.5)
+        # Clica no input do componente Calendar do PrimeReact (data-pc-name="calendar")
+        page.locator('[data-pc-name="calendar"] input[role="combobox"]').first.click()
+        page.locator(".p-datepicker").first.wait_for(state="visible", timeout=5000)
 
     def mes_ano_atual():
-        texto = page.locator("text=/^(Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro)\\s+\\d{4}$/").inner_text(timeout=5000)
-        partes = texto.strip().split()
-        return MESES_PT[partes[0]], int(partes[1])
+        mes = page.locator(".p-datepicker-month").inner_text(timeout=5000)
+        ano = int(page.locator(".p-datepicker-year").inner_text(timeout=5000))
+        return MESES_PT[mes], ano
 
     def navegar_ate(mes_alvo, ano_alvo):
         for _ in range(36):
@@ -63,24 +101,22 @@ def selecionar_intervalo_datas(page, data_inicio: str, data_fim: str):
             if m == mes_alvo and a == ano_alvo:
                 break
             if (a, m) < (ano_alvo, mes_alvo):
-                # clicar seta direita (próximo mês)
-                page.locator("text=/Julho|Janeiro|Fevereiro|Março|Abril|Maio|Junho|Agosto|Setembro|Outubro|Novembro|Dezembro/").locator("..").locator("svg").last.click()
+                page.locator(".p-datepicker-next").click()
             else:
-                page.locator("text=/Julho|Janeiro|Fevereiro|Março|Abril|Maio|Junho|Agosto|Setembro|Outubro|Novembro|Dezembro/").locator("..").locator("svg").first.click()
+                page.locator(".p-datepicker-prev").click()
             time.sleep(0.3)
 
-    def clicar_dia(dia: int):
-        # Clica na célula do dia no calendário
-        page.locator(f"text={dia}").filter(has_text=f"^{dia}$").or_(
-            page.get_by_role("cell", name=str(dia), exact=True)
-        ).first.click()
+    def clicar_dia(dia: int, mes: int, ano: int):
+        # Clica na célula do dia usando o aria-label "DD/MM/AAAA" (estável, vem do PrimeReact)
+        label = f"{dia:02d}/{mes:02d}/{ano}"
+        page.locator(f'.p-datepicker td[aria-label="{label}"]').click()
         time.sleep(0.3)
 
     abrir_calendario()
     navegar_ate(mes_ini, ano_ini)
-    clicar_dia(dia_ini)
+    clicar_dia(dia_ini, mes_ini, ano_ini)
     navegar_ate(mes_fim, ano_fim)
-    clicar_dia(dia_fim)
+    clicar_dia(dia_fim, mes_fim, ano_fim)
 
     # Fecha o calendário pressionando Escape
     page.keyboard.press("Escape")
@@ -158,15 +194,16 @@ def salvar_excel(nomes: list, arquivo: str):
 
 def main():
     with sync_playwright() as p:
-        # Usa o perfil padrão do Edge (mesmo do dia a dia, com sessões/senhas
-        # salvas), em vez de abrir uma janela isolada tipo "anônima".
-        # headless=False para ver o navegador funcionando.
-        context = p.chromium.launch_persistent_context(
-            EDGE_USER_DATA_DIR,
-            channel="msedge",
-            headless=False,
-            slow_mo=200,
-        )
+        # Abre o Edge automaticamente (se ainda não estiver aberto com depuração
+        # remota) e conecta nele, abrindo uma nova aba para rodar a automação.
+        try:
+            garantir_edge_com_debug()
+            browser = p.chromium.connect_over_cdp(EDGE_DEBUG_URL, slow_mo=200)
+        except Exception as e:
+            print(f"\n❌ {e}")
+            raise
+
+        context = browser.contexts[0] if browser.contexts else browser.new_context()
         page = context.new_page()
 
         print("=" * 60)
@@ -198,7 +235,9 @@ def main():
             selecionar_intervalo_datas(page, DATA_INICIO, DATA_FIM)
         except Exception:
             page.screenshot(path="erro_calendario.png", full_page=True)
-            print("\n⚠ Falha ao selecionar as datas. Screenshot salvo em 'erro_calendario.png' para diagnóstico.")
+            with open("erro_calendario.html", "w", encoding="utf-8") as f:
+                f.write(page.content())
+            print("\n⚠ Falha ao selecionar as datas. Screenshot salvo em 'erro_calendario.png' e HTML em 'erro_calendario.html' para diagnóstico.")
             raise
         time.sleep(1)
 
@@ -238,7 +277,9 @@ def main():
         # ── 9. Salvar no Excel ─────────────────────────────────────
         salvar_excel(nomes_unicos, ARQUIVO_SAIDA)
 
-        context.close()
+        # Fecha apenas a aba usada pela automação — não a janela/perfil inteiro,
+        # que é compartilhado com o uso normal do Edge.
+        page.close()
         print("\n✅ Automação concluída com sucesso!")
 
 

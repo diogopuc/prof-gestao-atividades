@@ -4,7 +4,7 @@ Automação para extrair a lista de professores da **Agenda Docente PUCPR**, a p
 
 ## O que a automação faz
 
-1. Abre o navegador (Chromium) e acessa a página de workflows da Agenda Docente PUCPR.
+1. Abre o navegador (Microsoft Edge) e acessa a página de workflows da Agenda Docente PUCPR.
 2. Seleciona o módulo **"Gestão de Atividades"** no filtro.
 3. Mantém o status **"Em andamento"** (já vem selecionado por padrão).
 4. Seleciona o intervalo de datas configurado, navegando pelo calendário (mês/ano) e clicando nos dias de início e fim.
@@ -16,10 +16,11 @@ Automação para extrair a lista de professores da **Agenda Docente PUCPR**, a p
 ## Requisitos
 
 - Python 3.8+
+- Microsoft Edge instalado no computador
 - Dependências:
   ```bash
   pip install playwright openpyxl
-  playwright install chromium
+  playwright install msedge
   ```
 
 ## Configuração

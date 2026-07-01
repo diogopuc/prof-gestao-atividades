@@ -5,7 +5,7 @@ e gera um arquivo Excel com os resultados.
 
 Dependências:
     pip install playwright openpyxl
-    playwright install chromium
+    playwright install msedge
 """
 
 from playwright.sync_api import sync_playwright
@@ -154,7 +154,7 @@ def main():
     with sync_playwright() as p:
         # headless=False para ver o navegador funcionando
         # headless=True para rodar em segundo plano (mais rápido)
-        browser = p.chromium.launch(headless=False, slow_mo=200)
+        browser = p.chromium.launch(channel="msedge", headless=False, slow_mo=200)
         context = browser.new_context()
         page    = context.new_page()
 

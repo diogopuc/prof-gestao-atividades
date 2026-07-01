@@ -194,7 +194,12 @@ def main():
 
         # ── 5. Selecionar o intervalo de datas ────────────────────
         print(f"[5] Selecionando datas: {DATA_INICIO} → {DATA_FIM}...")
-        selecionar_intervalo_datas(page, DATA_INICIO, DATA_FIM)
+        try:
+            selecionar_intervalo_datas(page, DATA_INICIO, DATA_FIM)
+        except Exception:
+            page.screenshot(path="erro_calendario.png", full_page=True)
+            print("\n⚠ Falha ao selecionar as datas. Screenshot salvo em 'erro_calendario.png' para diagnóstico.")
+            raise
         time.sleep(1)
 
         # ── 6. Clicar em Filtrar ───────────────────────────────────

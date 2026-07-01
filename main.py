@@ -11,6 +11,7 @@ Dependências:
 from playwright.sync_api import sync_playwright
 import openpyxl
 import math
+import os
 import time
 
 # ============================================================
@@ -20,6 +21,11 @@ URL_LOGIN     = "https://agendadocente.pucpr.br"
 DATA_INICIO   = "01/07/2026"   # DD/MM/AAAA  ← altere aqui
 DATA_FIM      = "07/07/2026"   # DD/MM/AAAA  ← altere aqui
 ARQUIVO_SAIDA = f"professores_{DATA_INICIO.replace('/','_')}_{DATA_FIM.replace('/','_')}.xlsx"
+
+# Perfil padrão do Edge (mesmo usado no dia a dia, com sessões/senhas salvas).
+# IMPORTANTE: feche todas as janelas do Edge antes de rodar o script,
+# pois o Windows bloqueia o perfil enquanto ele estiver em uso.
+EDGE_USER_DATA_DIR = os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\Edge\User Data")
 # ============================================================
 
 
@@ -152,11 +158,16 @@ def salvar_excel(nomes: list, arquivo: str):
 
 def main():
     with sync_playwright() as p:
-        # headless=False para ver o navegador funcionando
-        # headless=True para rodar em segundo plano (mais rápido)
-        browser = p.chromium.launch(channel="msedge", headless=False, slow_mo=200)
-        context = browser.new_context()
-        page    = context.new_page()
+        # Usa o perfil padrão do Edge (mesmo do dia a dia, com sessões/senhas
+        # salvas), em vez de abrir uma janela isolada tipo "anônima".
+        # headless=False para ver o navegador funcionando.
+        context = p.chromium.launch_persistent_context(
+            EDGE_USER_DATA_DIR,
+            channel="msedge",
+            headless=False,
+            slow_mo=200,
+        )
+        page = context.new_page()
 
         print("=" * 60)
         print("  Automação - Agenda Docente PUCPR")
@@ -222,7 +233,7 @@ def main():
         # ── 9. Salvar no Excel ─────────────────────────────────────
         salvar_excel(nomes_unicos, ARQUIVO_SAIDA)
 
-        browser.close()
+        context.close()
         print("\n✅ Automação concluída com sucesso!")
 
 

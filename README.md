@@ -18,6 +18,7 @@ Automação para extrair a lista de professores da **Agenda Docente PUCPR**, a p
 
 - Python 3.8+
 - Microsoft Edge instalado no computador
+- **Todas as janelas do Edge fechadas** antes de rodar o script (o Windows bloqueia o perfil padrão do Edge enquanto ele estiver em uso)
 - Dependências:
   ```bash
   pip install playwright openpyxl
@@ -34,18 +35,21 @@ As variáveis de configuração ficam no topo do arquivo [main.py](main.py):
 | `DATA_INICIO`   | Data inicial do filtro (formato `DD/MM/AAAA`)            | `01/07/2026`   |
 | `DATA_FIM`      | Data final do filtro (formato `DD/MM/AAAA`)              | `07/07/2026`   |
 | `ARQUIVO_SAIDA` | Nome do arquivo Excel gerado (montado automaticamente a partir das datas) | `professores_01_07_2026_07_07_2026.xlsx` |
+| `EDGE_USER_DATA_DIR` | Pasta de perfil do Edge usada pela automação (perfil padrão do usuário, com sessões/senhas salvas) | `%LOCALAPPDATA%\Microsoft\Edge\User Data` |
 
 Ajuste `DATA_INICIO` e `DATA_FIM` antes de cada execução, conforme o período desejado.
 
 ## Como executar
 
+Antes de iniciar, **feche todas as janelas do Microsoft Edge** — o script utiliza o perfil padrão do Edge (o mesmo que você usa no dia a dia), e o Windows bloqueia esse perfil enquanto ele estiver aberto em outra janela.
+
 ```bash
 python main.py
 ```
 
-O navegador abre em modo visível (`headless=False`) e com um pequeno atraso entre ações (`slow_mo=200`) para facilitar o acompanhamento visual da automação.
+O navegador abre em modo visível (`headless=False`), usando seu perfil normal do Edge (não é uma janela anônima/isolada — suas sessões e senhas salvas continuam disponíveis), e com um pequeno atraso entre ações (`slow_mo=200`) para facilitar o acompanhamento visual da automação.
 
-> **Login manual:** ao iniciar, o script abre a página de login e o terminal exibe a mensagem `Faça o login manualmente na janela do navegador e pressione ENTER aqui para continuar...`. Faça o login normalmente na janela do Edge e, em seguida, volte ao terminal e pressione **ENTER** para que a automação prossiga.
+> **Login manual:** ao iniciar, o script abre a página de login e o terminal exibe a mensagem `Faça o login manualmente na janela do navegador e pressione ENTER aqui para continuar...`. Faça o login normalmente na janela do Edge (ou confirme que já está logado, já que o perfil é o seu de uso diário) e, em seguida, volte ao terminal e pressione **ENTER** para que a automação prossiga.
 
 Ao final da execução, é gerado um arquivo `.xlsx` no diretório do projeto contendo a lista de professores únicos encontrados no período informado.
 

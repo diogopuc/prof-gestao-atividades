@@ -48,8 +48,8 @@ def selecionar_intervalo_datas(page, data_inicio: str, data_fim: str):
     }
 
     def abrir_calendario():
-        # Clica no campo de data (ícone de calendário ou input)
-        page.locator(".sc-aXZVg.sc-gEvEer").first.click()
+        # Clica no campo que exibe o intervalo de datas (ex.: "01/07/2026 - 01/07/2026")
+        page.locator(r"text=/\d{2}\/\d{2}\/\d{4}\s*-\s*\d{2}\/\d{2}\/\d{4}/").first.click()
         time.sleep(0.5)
 
     def mes_ano_atual():

@@ -163,31 +163,36 @@ def main():
         print(f"  Período: {DATA_INICIO} → {DATA_FIM}")
         print("=" * 60)
 
-        # ── 1. Acessar a página ────────────────────────────────────
-        print("\n[1] Acessando a página...")
+        # ── 1. Login ────────────────────────────────────────────────
+        print("\n[1] Acessando a página de login...")
+        page.goto(URL_LOGIN, wait_until="networkidle")
+        input("\n>> Faça o login manualmente na janela do navegador e pressione ENTER aqui para continuar...\n")
+
+        # ── 2. Acessar a página de workflows ───────────────────────
+        print("[2] Acessando a página de Gestão de Atividades...")
         page.goto(URL_LOGIN + "/workflows", wait_until="networkidle")
         time.sleep(2)
 
-        # ── 2. Selecionar "Gestão de Atividades" ──────────────────
-        print("[2] Selecionando 'Gestão de Atividades'...")
+        # ── 3. Selecionar "Gestão de Atividades" ──────────────────
+        print("[3] Selecionando 'Gestão de Atividades'...")
         page.select_option("select", value="3")
         time.sleep(1.5)
 
-        # ── 3. "Em andamento" já vem selecionado por padrão ───────
-        print("[3] Status 'Em andamento' já está selecionado.")
+        # ── 4. "Em andamento" já vem selecionado por padrão ───────
+        print("[4] Status 'Em andamento' já está selecionado.")
 
-        # ── 4. Selecionar o intervalo de datas ────────────────────
-        print(f"[4] Selecionando datas: {DATA_INICIO} → {DATA_FIM}...")
+        # ── 5. Selecionar o intervalo de datas ────────────────────
+        print(f"[5] Selecionando datas: {DATA_INICIO} → {DATA_FIM}...")
         selecionar_intervalo_datas(page, DATA_INICIO, DATA_FIM)
         time.sleep(1)
 
-        # ── 5. Clicar em Filtrar ───────────────────────────────────
-        print("[5] Clicando em Filtrar...")
+        # ── 6. Clicar em Filtrar ───────────────────────────────────
+        print("[6] Clicando em Filtrar...")
         page.get_by_role("button", name="Filtrar").click()
         time.sleep(2)
 
-        # ── 6. Extrair nomes percorrendo todas as páginas ──────────
-        print("[6] Iniciando extração...")
+        # ── 7. Extrair nomes percorrendo todas as páginas ──────────
+        print("[7] Iniciando extração...")
         _, _, total_paginas = obter_total_e_por_pagina(page)
 
         todos_nomes = []
@@ -204,7 +209,7 @@ def main():
                     print("  ⚠ Não foi possível avançar de página. Encerrando.")
                     break
 
-        # ── 7. Remover duplicatas mantendo a ordem ─────────────────
+        # ── 8. Remover duplicatas mantendo a ordem ─────────────────
         vistos = set()
         nomes_unicos = []
         for nome in todos_nomes:
@@ -214,7 +219,7 @@ def main():
 
         print(f"\n  Total extraído: {len(todos_nomes)} | Únicos: {len(nomes_unicos)}")
 
-        # ── 8. Salvar no Excel ─────────────────────────────────────
+        # ── 9. Salvar no Excel ─────────────────────────────────────
         salvar_excel(nomes_unicos, ARQUIVO_SAIDA)
 
         browser.close()

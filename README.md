@@ -4,14 +4,15 @@ Automação para extrair a lista de professores da **Agenda Docente PUCPR**, a p
 
 ## O que a automação faz
 
-1. Abre o navegador (Microsoft Edge) e acessa a página de workflows da Agenda Docente PUCPR.
-2. Seleciona o módulo **"Gestão de Atividades"** no filtro.
-3. Mantém o status **"Em andamento"** (já vem selecionado por padrão).
-4. Seleciona o intervalo de datas configurado, navegando pelo calendário (mês/ano) e clicando nos dias de início e fim.
-5. Clica em **Filtrar** para aplicar os critérios de busca.
-6. Percorre todas as páginas de resultados, extraindo os nomes dos professores exibidos (via leitura do texto dos elementos `<span>` que estejam em maiúsculas).
-7. Remove nomes duplicados, mantendo a ordem original.
-8. Salva o resultado em um arquivo Excel (`.xlsx`), com colunas `#` e `Nome do Professor`.
+1. Abre o navegador (Microsoft Edge) na página de login da Agenda Docente PUCPR e **pausa a execução**, aguardando o login manual do usuário no terminal (pressionar ENTER após autenticar).
+2. Acessa a página de workflows.
+3. Seleciona o módulo **"Gestão de Atividades"** no filtro.
+4. Mantém o status **"Em andamento"** (já vem selecionado por padrão).
+5. Seleciona o intervalo de datas configurado, navegando pelo calendário (mês/ano) e clicando nos dias de início e fim.
+6. Clica em **Filtrar** para aplicar os critérios de busca.
+7. Percorre todas as páginas de resultados, extraindo os nomes dos professores exibidos (via leitura do texto dos elementos `<span>` que estejam em maiúsculas).
+8. Remove nomes duplicados, mantendo a ordem original.
+9. Salva o resultado em um arquivo Excel (`.xlsx`), com colunas `#` e `Nome do Professor`.
 
 ## Requisitos
 
@@ -44,7 +45,7 @@ python main.py
 
 O navegador abre em modo visível (`headless=False`) e com um pequeno atraso entre ações (`slow_mo=200`) para facilitar o acompanhamento visual da automação.
 
-> **Atenção:** o script não realiza login automaticamente — é necessário estar autenticado na Agenda Docente PUCPR (ou realizar o login manualmente na janela do navegador quando ela abrir) antes que a extração dos dados funcione corretamente.
+> **Login manual:** ao iniciar, o script abre a página de login e o terminal exibe a mensagem `Faça o login manualmente na janela do navegador e pressione ENTER aqui para continuar...`. Faça o login normalmente na janela do Edge e, em seguida, volte ao terminal e pressione **ENTER** para que a automação prossiga.
 
 Ao final da execução, é gerado um arquivo `.xlsx` no diretório do projeto contendo a lista de professores únicos encontrados no período informado.
 

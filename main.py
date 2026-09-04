@@ -20,6 +20,7 @@ import urllib.request
 #  CONFIGURAÇÃO — ajuste aqui antes de rodar
 # ============================================================
 URL_LOGIN     = "https://agendadocente.pucpr.br"
+URL_WORKFLOWS = f"{URL_LOGIN}/workflows"
 DATA_INICIO   = "01/07/2026"   # DD/MM/AAAA  ← altere aqui
 DATA_FIM      = "07/07/2026"   # DD/MM/AAAA  ← altere aqui
 ARQUIVO_SAIDA = f"professores_{DATA_INICIO.replace('/','_')}_{DATA_FIM.replace('/','_')}.xlsx"
@@ -115,6 +116,11 @@ def selecionar_intervalo_datas(page, data_inicio: str, data_fim: str):
     abrir_calendario()
     navegar_ate(mes_ini, ano_ini)
     clicar_dia(dia_ini, mes_ini, ano_ini)
+
+    # Nesta versão da Agenda Docente o popup pode fechar após o primeiro
+    # clique. Reabri-lo preserva o início já selecionado e permite concluir
+    # o intervalo com a data final.
+    abrir_calendario()
     navegar_ate(mes_fim, ano_fim)
     clicar_dia(dia_fim, mes_fim, ano_fim)
 
@@ -211,14 +217,20 @@ def main():
         print(f"  Período: {DATA_INICIO} → {DATA_FIM}")
         print("=" * 60)
 
-        # ── 1. Login ────────────────────────────────────────────────
-        print("\n[1] Acessando a página de login...")
-        page.goto(URL_LOGIN, wait_until="networkidle")
-        input("\n>> Faça o login manualmente na janela do navegador e pressione ENTER aqui para continuar...\n")
+        # ── 1. Acessar workflows / login ────────────────────────────
+        # A própria aplicação redireciona para o login caso não exista
+        # uma sessão válida. Assim a aba já abre no destino correto.
+        print("\n[1] Abrindo Gestão de Atividades...")
+        page.goto(URL_WORKFLOWS, wait_until="networkidle")
+        input(
+            "\n>> Se o login for solicitado, autentique-se no Edge. "
+            "Quando a tela de Aprovações estiver visível, pressione ENTER aqui para continuar...\n"
+        )
 
-        # ── 2. Acessar a página de workflows ───────────────────────
-        print("[2] Acessando a página de Gestão de Atividades...")
-        page.goto(URL_LOGIN + "/workflows", wait_until="networkidle")
+        # Garante o destino mesmo quando o login redirecionar para a página inicial.
+        if not page.url.rstrip("/").endswith("/workflows"):
+            print("[2] Retornando para Gestão de Atividades...")
+            page.goto(URL_WORKFLOWS, wait_until="networkidle")
         time.sleep(2)
 
         # ── 3. Selecionar "Gestão de Atividades" ──────────────────

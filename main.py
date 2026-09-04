@@ -21,8 +21,8 @@ import urllib.request
 # ============================================================
 URL_LOGIN     = "https://agendadocente.pucpr.br"
 URL_WORKFLOWS = f"{URL_LOGIN}/workflows"
-DATA_INICIO   = "01/07/2026"   # DD/MM/AAAA  ← altere aqui
-DATA_FIM      = "07/07/2026"   # DD/MM/AAAA  ← altere aqui
+DATA_INICIO   = "03/09/2026"   # DD/MM/AAAA  ← altere aqui
+DATA_FIM      = "11/09/2026"   # DD/MM/AAAA  ← altere aqui
 ARQUIVO_SAIDA = f"professores_{DATA_INICIO.replace('/','_')}_{DATA_FIM.replace('/','_')}.xlsx"
 
 # O script usa um perfil separado para a automação. O perfil padrão não pode

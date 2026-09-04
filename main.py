@@ -25,11 +25,13 @@ DATA_INICIO   = "01/07/2026"   # DD/MM/AAAA  ← altere aqui
 DATA_FIM      = "07/07/2026"   # DD/MM/AAAA  ← altere aqui
 ARQUIVO_SAIDA = f"professores_{DATA_INICIO.replace('/','_')}_{DATA_FIM.replace('/','_')}.xlsx"
 
-# O script abre o Edge sozinho (com depuração remota habilitada) usando o seu
-# perfil normal do dia a dia, e roda a automação em uma nova aba nele.
-# Não é necessário editar nenhum atalho — isso é feito automaticamente.
+# O script usa um perfil separado para a automação. O perfil padrão não pode
+# ser reutilizado com segurança quando o Edge normal já está em execução.
+# O login nesse perfil é feito apenas na primeira execução e fica salvo.
 EDGE_EXECUTAVEL    = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-EDGE_USER_DATA_DIR = os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\Edge\User Data")
+EDGE_USER_DATA_DIR = os.path.join(
+    os.environ["LOCALAPPDATA"], "AgendaDocenteAutomacao", "Edge User Data"
+)
 EDGE_DEBUG_URL     = "http://localhost:9222"
 # ============================================================
 
@@ -44,14 +46,17 @@ def _cdp_disponivel() -> bool:
 
 def garantir_edge_com_debug():
     """Garante que o Edge esteja rodando com depuração remota habilitada,
-    abrindo-o automaticamente se necessário (usando o perfil padrão do usuário)."""
+    abrindo-o automaticamente se necessário em um perfil exclusivo."""
     if _cdp_disponivel():
         return
 
     subprocess.Popen([
         EDGE_EXECUTAVEL,
         "--remote-debugging-port=9222",
+        "--remote-debugging-address=127.0.0.1",
         f"--user-data-dir={EDGE_USER_DATA_DIR}",
+        "--new-window",
+        URL_WORKFLOWS,
     ])
 
     for _ in range(40):

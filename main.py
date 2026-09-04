@@ -87,8 +87,8 @@ def selecionar_intervalo_datas(page, data_inicio: str, data_fim: str):
     }
 
     def abrir_calendario():
-        # Clica no input do componente Calendar do PrimeReact (data-pc-name="calendar")
-        page.locator('[data-pc-name="calendar"] input[role="combobox"]').first.click()
+        # Campo de período da tela de Aprovações.
+        page.locator(".sc-fIGJwM.ckAxCN input[role='combobox']").click()
         page.locator(".p-datepicker").first.wait_for(state="visible", timeout=5000)
 
     def mes_ano_atual():
